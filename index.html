@@ -29,7 +29,7 @@
   </table>
   
   <script type="module">
-    import { ambilDaftarProduk } from './main.js';
+    import { ambilDaftarProduk, formatAngka } from './main.js';
     
     $(document).ready(async function() {
       let elemenDaftar = $("#daftar-produk > tbody");
@@ -41,7 +41,7 @@
           '<tr>' +
           '<th>' + nomor + '</th>' +
           '<td>' + data.nama + '</td>' +
-          '<td>' + data.harga + '</td>' +
+          '<td>' + formatAngka(data.harga) + '</td>' +
           '<td>' + data.stok + '</td>' +
           '</tr>'
           );

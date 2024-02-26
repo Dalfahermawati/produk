@@ -34,16 +34,18 @@
     $(document).ready(async function() {
       let elemenDaftar = $("#daftar-produk > tbody");
       let daftarProduk = await ambilDaftarProduk();
+      let nomor = 1;
       
       daftarProduk.forEach((data) => {
         elemenDaftar.append(
           '<tr>' +
-          '<th>' + '</th>' +
+          '<th>' + nomor + '</th>' +
           '<td>' + data.nama + '</td>' +
           '<td>' + data.harga + '</td>' +
           '<td>' + data.stok + '</td>' +
           '</tr>'
           );
+          nomor = nomor + 1;
       });
     });
   </script>

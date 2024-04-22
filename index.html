@@ -57,6 +57,8 @@
       $('#loader').hide();
       
       $('.tombol-hapus').click(async function() {
+        $(this).attr('disabled', 'disabled');
+        $('#' + $(this).attr('data')).show();
       await hapusProduk($(this).attr('data'));
       location.reload();
       });

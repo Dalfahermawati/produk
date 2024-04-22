@@ -28,6 +28,7 @@
       <input type="text" class="form-control" id="input-stok">
     </div>
     <button type="submit" class="btn btn-primary" id="tombol-tambah">Simpan</button>
+    <img src="loader.gif" style="width: 2em; display: none" id="loader">
   </form>
   
   <a href="index.html">Lihat Daftar Produk</a>
@@ -39,9 +40,15 @@
     let elemenNamaProduk = document.getElementById('input-nama');
     let elemenHarga = document.getElementById('input-harga');
     let elemenStok = document.getElementById('input-stok');
+    let loader = document.getElementById('loader');
+
     
     tombolTambah.addEventListener('click', async function (e) {
       e.preventDefault();
+      
+      tombolTambah.setAttribute('disabled', 'disabled');
+      loader.style.display = "block";
+      
       await tambahProduk(elemenNamaProduk.value, elemenHarga.value, elemenStok.value);
       window.location.href = 'index.html';
     });
